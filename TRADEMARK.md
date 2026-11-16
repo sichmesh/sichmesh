@@ -8,7 +8,7 @@ The following are trademarks of BFU Electronics LTD and are **not** licensed und
 
 - the name **SICH™**
 - the SICH trident logo (`public/logo.png` and any variants)
-- the SICH device renders and product images (`public/Front.svg` and any variants)
+- the SICH device renders and product images (`public/device.webp` and any variants)
 
 ## What you may do
 

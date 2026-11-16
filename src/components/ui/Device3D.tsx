@@ -13,7 +13,7 @@ import type { DeviceScene, ViewKey } from "@/lib/deviceScene";
  * view. Rendering is parked whenever the canvas leaves the viewport.
  *
  * If WebGL is unavailable (or the chunk fails to load) the component falls
- * back to the flat `Front.svg` product render, so layouts never break.
+ * back to the flat `device.webp` product render, so layouts never break.
  */
 export default function Device3D({
   className = "",
