@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 /**
  * Site-wide security headers. Light enough to keep every page statically prerendered.
  */
-export function middleware() {
+export function proxy() {
   const res = NextResponse.next();
   res.headers.set("Referrer-Policy", "no-referrer");
   res.headers.set("X-Content-Type-Options", "nosniff");
