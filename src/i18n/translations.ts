@@ -12,12 +12,10 @@ export const translations = {
       cta: "Join Community",
     },
     hero: {
-      badge: "",
       title: "SICH",
       subtitle: "Off-Grid Mesh Network",
       statement:
         "Everything you need to stay connected.",
-      pills: ["Voice", "Messages", "SOS", "Mesh", "Off-Grid"],
       learnMore: "Learn More",
       roadmap: "Project Roadmap",
       scroll: "Scroll to explore",
@@ -151,12 +149,10 @@ export const translations = {
       cta: "Приєднатися",
     },
     hero: {
-      badge: "",
       title: "SICH",
       subtitle: "Автономна mesh-мережа",
       statement:
         "Усе необхідне, щоб залишатися на зв'язку.",
-      pills: ["Голос", "Повідомлення", "SOS", "Mesh", "Офлайн"],
       learnMore: "Дізнатися більше",
       roadmap: "Дорожня карта",
       scroll: "Гортайте далі",
