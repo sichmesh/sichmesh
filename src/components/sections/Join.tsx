@@ -81,6 +81,14 @@ export default function Join() {
             >
               {t.join.followCta}
             </a>
+            <a
+              href="https://github.com/sichmesh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost w-full sm:w-auto"
+            >
+              GitHub
+            </a>
           </div>
         </Reveal>
       </div>
@@ -101,7 +109,7 @@ export default function Join() {
             </div>
           </div>
           <p className="font-mono text-[11px] text-dim/70">
-            © {new Date().getFullYear()} SICH. {t.footer.rights}
+            © {new Date().getFullYear()} BFU Electronics LTD · {t.footer.rights}
           </p>
         </div>
       </footer>

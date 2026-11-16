@@ -6,7 +6,7 @@
  */
 export default function ProductRender({
   className = "",
-  alt = "BFU SICH device",
+  alt = "BFU Electronics device for the SICH network",
   priority = false,
 }: {
   className?: string;

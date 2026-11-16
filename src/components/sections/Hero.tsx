@@ -77,16 +77,6 @@ export default function Hero() {
           {t.hero.statement}
         </motion.p>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base"
-        >
-          {t.hero.description}
-        </motion.p>
-
         {/* Device render — centerpiece */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -94,7 +84,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
           /* -z-10: the antennas bleed up out of this box and must pass
              behind the copy above, not over it. */
-          className="relative -z-10 flex w-full items-center justify-center"
+          className="relative -z-10 mt-20 flex w-full items-center justify-center sm:mt-28"
         >
           {/* stronger device glow, connecting product to the mesh */}
           <div className="absolute h-[70%] w-[70%] rounded-full bg-gold/25 blur-[100px] sm:h-[78%] sm:w-[78%] sm:blur-[120px]" />
@@ -107,8 +97,9 @@ export default function Hero() {
           >
             <Device3D
               initialView="iso"
+              buttons={false}
               bleedTop={0.55}
-              alt="BFU SICH off-grid communication device"
+              alt="BFU Electronics device for the SICH network"
               className="h-[46vh] min-h-[340px] w-full max-w-[88vw] sm:h-[54vh] sm:max-w-[480px] lg:h-[52vh] lg:max-w-[560px]"
             />
           </motion.div>

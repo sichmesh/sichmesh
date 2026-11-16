@@ -34,12 +34,12 @@ export default function Status() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.8, ease: "easeInOut" }}
             style={{ originY: 0 }}
-            className="absolute left-[18px] top-2 h-[62%] w-0.5 rounded-full bg-gradient-to-b from-gold via-gold to-steel shadow-[0_0_14px_rgba(230,184,74,0.6)] md:left-1/2 md:-translate-x-1/2"
+            className="absolute left-[18px] top-2 h-[38%] w-0.5 rounded-full bg-gradient-to-b from-gold via-gold to-steel shadow-[0_0_14px_rgba(230,184,74,0.6)] md:left-1/2 md:-translate-x-1/2"
           />
           {/* leading glow head */}
           <motion.div
             initial={{ opacity: 0, top: "0%" }}
-            whileInView={{ opacity: 1, top: "62%" }}
+            whileInView={{ opacity: 1, top: "38%" }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.8, ease: "easeInOut" }}
             className="absolute left-[18px] z-10 h-3 w-3 -translate-x-[5px] rounded-full bg-gold shadow-[0_0_18px_6px_rgba(230,184,74,0.7)] md:left-1/2 md:-translate-x-1/2"

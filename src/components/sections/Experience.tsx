@@ -6,13 +6,14 @@ import { SectionHeading } from "@/components/ui/Section";
 import { RevealGroup, fadeUp } from "@/components/ui/motion";
 import ProductRender from "@/components/ui/ProductRender";
 
+// Same order as `experience.cards`
 const icons = [
-  "M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3zm-6-3a6 6 0 0012 0M12 17v4m-4 0h8", // voice
-  "M4 5h16v11H8l-4 4z", // message
-  "M3 6h18M3 12h18M3 18h12", // channels
-  "M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11zM12 10a1.5 1.5 0 100-3 1.5 1.5 0 000 3z", // gps
-  "M12 3l9 16H3zM12 9v5M12 17h.01", // alert
-  "M6 8a3 3 0 100-6 3 3 0 000 6zm12 14a3 3 0 100-6 3 3 0 000 6zM6 22a3 3 0 100-6 3 3 0 000 6zm12-14a3 3 0 100-6 3 3 0 000 6zM8 6l8 12M16 6L8 18", // autonomous
+  "M12 21a9 9 0 100-18 9 9 0 000 18zM12 8v8M8 12h8", // rescue
+  "M9 11a3 3 0 100-6 3 3 0 000 6zm8 0a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM3 20a6 6 0 0112 0M15 14.5a5 5 0 016 5.5", // volunteers
+  "M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6", // families
+  "M6 8a3 3 0 100-6 3 3 0 000 6zm12 14a3 3 0 100-6 3 3 0 000 6zM6 22a3 3 0 100-6 3 3 0 000 6zm12-14a3 3 0 100-6 3 3 0 000 6zM8 6l8 12M16 6L8 18", // communities
+  "M3 19l5-9 4 6 3-4 6 7zM17 8a2 2 0 100-4 2 2 0 000 4z", // outdoors
+  "M12 11v10M9 21h6M12 11a2 2 0 100-4 2 2 0 000 4zM8.5 5.5a5 5 0 000 7M15.5 5.5a5 5 0 010 7M6 3a8.5 8.5 0 000 12M18 3a8.5 8.5 0 010 12", // makers / radio
 ];
 
 export default function Experience() {
@@ -66,11 +67,6 @@ export default function Experience() {
               <p className="relative mt-3 text-sm leading-relaxed text-slate-400">
                 {c.desc}
               </p>
-
-              <div className="relative mt-6 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-accent/70 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="h-px w-6 bg-accent/60" />
-                active
-              </div>
             </motion.div>
           ))}
         </RevealGroup>

@@ -19,14 +19,17 @@ export default function Device3D({
   className = "",
   initialView = "iso",
   controls = true,
+  buttons = true,
   autoRotate = true,
   bleedTop = 0,
-  alt = "BFU SICH device",
+  alt = "BFU Electronics device for the SICH network",
 }: {
   className?: string;
   initialView?: ViewKey;
-  /** Show the view buttons + interaction hint. */
+  /** Allow drag/zoom. */
   controls?: boolean;
+  /** Show the view buttons and the interaction hint under the device. */
+  buttons?: boolean;
   autoRotate?: boolean;
   /**
    * Extra canvas height above the layout box, as a fraction of that box.
@@ -145,7 +148,7 @@ export default function Device3D({
         />
       </div>
 
-      {controls && (
+      {controls && buttons && (
         <div className="mt-4 flex shrink-0 flex-col items-center gap-2">
           <div className="flex flex-wrap items-center justify-center gap-2">
             {views.map((v) => (

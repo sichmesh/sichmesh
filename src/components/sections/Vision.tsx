@@ -4,15 +4,17 @@ import { motion } from "framer-motion";
 import { useLang } from "@/i18n/LanguageProvider";
 import { SectionHeading } from "@/components/ui/Section";
 
+// Same order as `vision.features`
 const featureIcons = [
-  "M4 5h16v11H7l-3 3z", // message
-  "M12 3v9m0 0a3 3 0 003-3V6a3 3 0 00-6 0v3a3 3 0 003 3zm-6 0a6 6 0 0012 0M12 18v3", // voice
-  "M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z", // location pin (drawn below)
-  "M12 2l2 4 4 .6-3 3 .7 4L12 16l-3.7 1.6.7-4-3-3 4-.6z", // sos star
-  "M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z", // shield
-  "M6 8a3 3 0 100-6 3 3 0 000 6zm12 0a3 3 0 100-6 3 3 0 000 6zM6 22a3 3 0 100-6 3 3 0 000 6zm12 0a3 3 0 100-6 3 3 0 000 6zM6 5h12M6 19h12M5 8v8m14-8v8", // mesh
-  "M12 22a10 10 0 100-20 10 10 0 000 20zM2 12h20M12 2a15 15 0 010 20a15 15 0 010-20z", // offline globe
-  "M4 12h4l3-8 4 16 3-8h2", // relay pulse
+  "M4 5h16v11H7l-3 3z", // text message
+  "M12 14a3 3 0 003-3V6a3 3 0 00-6 0v5a3 3 0 003 3zm-6-3a6 6 0 0012 0M12 17v4m-4 0h8", // voice
+  "M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11zM12 12a2 2 0 100-4 2 2 0 000 4z", // location
+  "M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3 2", // time
+  "M6 8a3 3 0 100-6 3 3 0 000 6zm12 0a3 3 0 100-6 3 3 0 000 6zM6 22a3 3 0 100-6 3 3 0 000 6zm12 0a3 3 0 100-6 3 3 0 000 6zM6 5h12M6 19h12M5 8v8m14-8v8", // relay
+  "M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14", // open source
+  "M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3", // encrypted storage
+  "M12 3l9 16H3zM12 10v4M12 17h.01", // sos
+  "M6 11h12v9H6zM8 11V8a4 4 0 018 0v3", // encryption
 ];
 
 export default function Vision() {
@@ -26,14 +28,14 @@ export default function Vision() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading label={t.vision.label} title={t.vision.title} lead={t.vision.lead} />
 
-        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.vision.features.map((f, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -8, scale: 1.02 }}
               className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-b from-ink-700/60 to-ink-800/60 p-7 backdrop-blur transition-colors hover:border-accent/30"
             >
@@ -43,6 +45,11 @@ export default function Vision() {
                   <path d={featureIcons[i]} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
+              {("soon" in f || "beta" in f) && (
+                <span className="absolute right-5 top-5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-accent">
+                  {"beta" in f ? t.vision.beta : t.vision.soon}
+                </span>
+              )}
               <h3 className="font-body text-base font-semibold text-white">{f.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">{f.desc}</p>
               <span className="mt-auto pt-5 block font-mono text-[10px] text-slate-600">

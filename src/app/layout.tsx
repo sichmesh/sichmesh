@@ -26,9 +26,9 @@ const mono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "BFU SICH — Off-Grid Communication Network",
+  title: "SICH — Off-Grid Mesh Network",
   description:
-    "A new vision for autonomous communication beyond traditional infrastructure.",
+    "Open-source LoRa mesh network for text and voice messages without mobile networks or internet.",
 };
 
 export const viewport: Viewport = {

@@ -41,7 +41,7 @@ export default function Meet() {
               <Device3D
                 initialView="front"
                 autoRotate={false}
-                alt="BFU SICH device — interactive 3D view"
+                alt="BFU Electronics device for the SICH network"
                 /* taller box instead of a bleed: this section clips its own
                    overflow, so the antennas get their room inside the column */
                 className="aspect-[5/8] w-full"
