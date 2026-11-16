@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: "/flash",
-        destination: "https://flasher.sich.network",
+        destination: "https://flasher.sichmesh.org",
         permanent: true,
       },
     ];

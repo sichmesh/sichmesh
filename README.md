@@ -10,12 +10,12 @@ Official website of the SICH project.
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-e8b84a?style=flat-square)](LICENSE)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15-0b0e18?style=flat-square&logo=nextdotjs)](https://nextjs.org)
-[![Website](https://img.shields.io/badge/web-sich.network-e8b84a?style=flat-square)](https://sich.network)
+[![Website](https://img.shields.io/badge/web-sichmesh.org-e8b84a?style=flat-square)](https://sichmesh.org)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/zpVgjRxdQJ)
 [![YouTube](https://img.shields.io/badge/YouTube-Brain%20From%20Ukraine-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@BrainFromUkraine)
 ![Made in Ukraine](https://img.shields.io/badge/made%20in-Ukraine-0057B7?style=flat-square&labelColor=FFD700)
 
-[**Website**](https://sich.network) · [**Flash firmware**](https://flasher.sich.network) · [**Discord**](https://discord.gg/zpVgjRxdQJ) · [**YouTube**](https://www.youtube.com/@BrainFromUkraine)
+[**Website**](https://sichmesh.org) · [**Flash firmware**](https://flasher.sichmesh.org) · [**Discord**](https://discord.gg/zpVgjRxdQJ) · [**YouTube**](https://www.youtube.com/@BrainFromUkraine)
 
 **English** · [Українська](README.uk.md)
 
@@ -43,15 +43,15 @@ SICH is aimed at civilians, volunteers, technical communities and anyone who nee
 | Route | Description |
 |---|---|
 | `/` | Project landing page — story, vision, how the mesh works, use cases, status. Interactive 3D model of the device. English and Ukrainian. |
-| `/flash` | Redirects to the [web flasher](https://flasher.sich.network). |
+| `/flash` | Redirects to the [web flasher](https://flasher.sichmesh.org). |
 
 The page is statically prerendered. Language switching happens instantly on the client.
 
 ## Web flasher
 
-Firmware is installed from the browser with the **SICH Web Flasher** — a separate app at [flasher.sich.network](https://flasher.sich.network), developed in [sichmesh/web-flasher](https://github.com/sichmesh/web-flasher). Board makers add their devices there.
+Firmware is installed from the browser with the **SICH Web Flasher** — a separate app at [flasher.sichmesh.org](https://flasher.sichmesh.org), developed in [sichmesh/web-flasher](https://github.com/sichmesh/web-flasher). Board makers add their devices there.
 
-`sich.network/flash` redirects to the flasher, so older links keep working.
+`sichmesh.org/flash` redirects to the flasher, so older links keep working.
 
 ## Getting started
 

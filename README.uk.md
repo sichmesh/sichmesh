@@ -10,12 +10,12 @@
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-e8b84a?style=flat-square)](LICENSE)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15-0b0e18?style=flat-square&logo=nextdotjs)](https://nextjs.org)
-[![Website](https://img.shields.io/badge/web-sich.network-e8b84a?style=flat-square)](https://sich.network)
+[![Website](https://img.shields.io/badge/web-sichmesh.org-e8b84a?style=flat-square)](https://sichmesh.org)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/zpVgjRxdQJ)
 [![YouTube](https://img.shields.io/badge/YouTube-Brain%20From%20Ukraine-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@BrainFromUkraine)
 ![Made in Ukraine](https://img.shields.io/badge/made%20in-Ukraine-0057B7?style=flat-square&labelColor=FFD700)
 
-[**Сайт**](https://sich.network) · [**Прошити пристрій**](https://flasher.sich.network) · [**Discord**](https://discord.gg/zpVgjRxdQJ) · [**YouTube**](https://www.youtube.com/@BrainFromUkraine)
+[**Сайт**](https://sichmesh.org) · [**Прошити пристрій**](https://flasher.sichmesh.org) · [**Discord**](https://discord.gg/zpVgjRxdQJ) · [**YouTube**](https://www.youtube.com/@BrainFromUkraine)
 
 [English](README.md) · **Українська**
 
@@ -43,15 +43,15 @@ SICH створюється для цивільних, волонтерів, т�
 | Сторінка | Опис |
 |---|---|
 | `/` | Головна сторінка проєкту — історія, бачення, як працює mesh, сценарії використання, статус. Інтерактивна 3D-модель пристрою. Англійською та українською. |
-| `/flash` | Перенаправляє на [веб-прошивальник](https://flasher.sich.network). |
+| `/flash` | Перенаправляє на [веб-прошивальник](https://flasher.sichmesh.org). |
 
 Сторінка статично згенерована заздалегідь. Мова перемикається миттєво, без перезавантаження.
 
 ## Веб-прошивальник
 
-Прошивка встановлюється з браузера через **SICH Web Flasher** — окремий застосунок на [flasher.sich.network](https://flasher.sich.network), який розробляється в репозиторії [sichmesh/web-flasher](https://github.com/sichmesh/web-flasher). Саме туди виробники додають свої плати.
+Прошивка встановлюється з браузера через **SICH Web Flasher** — окремий застосунок на [flasher.sichmesh.org](https://flasher.sichmesh.org), який розробляється в репозиторії [sichmesh/web-flasher](https://github.com/sichmesh/web-flasher). Саме туди виробники додають свої плати.
 
-`sich.network/flash` перенаправляє на прошивальник, тож старі посилання працюють.
+`sichmesh.org/flash` перенаправляє на прошивальник, тож старі посилання працюють.
 
 ## Швидкий старт
 

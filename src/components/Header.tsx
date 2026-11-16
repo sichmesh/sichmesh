@@ -36,7 +36,7 @@ export default function Header() {
     { href: "#features", label: t.nav.features },
     { href: "#status", label: t.nav.status },
     { href: "#join", label: t.nav.join },
-    { href: "https://flasher.sich.network", label: t.nav.flash },
+    { href: "https://flasher.sichmesh.org", label: t.nav.flash },
   ];
 
   return (
