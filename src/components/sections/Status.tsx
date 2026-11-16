@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/i18n/LanguageProvider";
 import { SectionHeading } from "@/components/ui/Section";
@@ -14,8 +15,49 @@ function stateStyle(state: string) {
   return "border-line/60 bg-panel/40 text-dim";
 }
 
+const isDone = (state: string) => {
+  const s = state.toLowerCase();
+  return s.includes("complete") || s.includes("заверш");
+};
+
 export default function Status() {
   const { t } = useLang();
+  const track = useRef<HTMLDivElement>(null);
+  const dots = useRef<(HTMLDivElement | null)[]>([]);
+  // Track geometry measured from the real dots, so the line starts at the first
+  // dot, ends at the last one and the progress stops exactly on the last
+  // completed step, whatever the card heights are on this screen.
+  const [geo, setGeo] = useState({ first: 0, last: 0, done: 0 });
+  const lastDone = t.status.steps.reduce((acc, s, i) => (isDone(s.state) ? i : acc), -1);
+
+  useEffect(() => {
+    const box = track.current;
+    if (!box) return;
+    // centre of a dot relative to the track box; offsetTop ignores the reveal
+    // transforms, so the result does not depend on the scroll animation
+    const centre = (el: HTMLElement | null | undefined) => {
+      if (!el) return 0;
+      let y = el.offsetHeight / 2;
+      let n: HTMLElement | null = el;
+      while (n && n !== box) {
+        y += n.offsetTop;
+        n = n.offsetParent as HTMLElement | null;
+      }
+      return y;
+    };
+    const measure = () => {
+      const list = dots.current;
+      setGeo({
+        first: centre(list[0]),
+        last: centre(list[list.length - 1]),
+        done: centre(list[Math.max(lastDone, 0)]),
+      });
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(box);
+    return () => ro.disconnect();
+  }, [lastDone, t]);
 
   return (
     <section id="status" className="relative overflow-hidden py-28 sm:py-36">
@@ -24,26 +66,33 @@ export default function Status() {
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <SectionHeading label={t.status.label} title={t.status.title} lead={t.status.lead} />
 
-        <div className="relative mt-16">
-          {/* vertical track */}
-          <div className="absolute left-[18px] top-2 h-[calc(100%-1rem)] w-0.5 rounded-full bg-white/10 md:left-1/2 md:-translate-x-1/2" />
-          {/* animated progress fill */}
-          <motion.div
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-            style={{ originY: 0 }}
-            className="absolute left-[18px] top-2 h-[38%] w-0.5 rounded-full bg-gradient-to-b from-gold via-gold to-steel shadow-[0_0_14px_rgba(230,184,74,0.6)] md:left-1/2 md:-translate-x-1/2"
+        <div ref={track} className="relative mt-16">
+          {/* vertical track: first dot to last dot */}
+          <div
+            style={{ top: geo.first, height: Math.max(geo.last - geo.first, 0) }}
+            className="absolute left-[20px] w-0.5 -translate-x-1/2 rounded-full bg-white/10 md:left-1/2"
           />
-          {/* leading glow head */}
-          <motion.div
-            initial={{ opacity: 0, top: "0%" }}
-            whileInView={{ opacity: 1, top: "38%" }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.8, ease: "easeInOut" }}
-            className="absolute left-[18px] z-10 h-3 w-3 -translate-x-[5px] rounded-full bg-gold shadow-[0_0_18px_6px_rgba(230,184,74,0.7)] md:left-1/2 md:-translate-x-1/2"
-          />
+          {lastDone > 0 && (
+            <>
+              {/* progress fill: first dot to the last completed one */}
+              <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: Math.max(geo.done - geo.first, 0) }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 1.8, ease: "easeInOut" }}
+                style={{ top: geo.first }}
+                className="absolute left-[20px] w-0.5 -translate-x-1/2 rounded-full bg-gradient-to-b from-gold via-gold to-steel shadow-[0_0_14px_rgba(230,184,74,0.6)] md:left-1/2"
+              />
+              {/* leading glow head, stops on the last completed dot */}
+              <motion.div
+                initial={{ opacity: 0, top: geo.first }}
+                whileInView={{ opacity: 1, top: geo.done }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 1.8, ease: "easeInOut" }}
+                className="absolute left-[20px] z-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold shadow-[0_0_18px_6px_rgba(230,184,74,0.7)] md:left-1/2"
+              />
+            </>
+          )}
 
           <div className="space-y-8">
             {t.status.steps.map((step, i) => (
@@ -54,14 +103,13 @@ export default function Status() {
                   }`}
                 >
                   {/* node dot */}
-                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center md:absolute md:left-1/2 md:-translate-x-1/2">
-                    <span className="absolute h-10 w-10 rounded-full border border-accent/20" />
-                    <motion.span
-                      animate={{ scale: [1, 1.8], opacity: [0.5, 0] }}
-                      transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.3 }}
-                      className="absolute h-6 w-6 rounded-full border border-accent/40"
-                    />
-                    <span className="h-3 w-3 rounded-full bg-accent shadow-glow-cyan" />
+                  <div
+                    ref={(el) => {
+                      dots.current[i] = el;
+                    }}
+                    className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center md:absolute md:left-1/2 md:-translate-x-1/2"
+                  >
+                    <RadioNode done={isDone(step.state)} delay={i * 0.4} />
                   </div>
 
                   {/* card */}
@@ -93,5 +141,29 @@ export default function Status() {
         </div>
       </div>
     </section>
+  );
+}
+
+/** Timeline marker: a small radio node sending out signal waves.
+ *  Completed steps are gold, the ones ahead are steel and quieter. */
+function RadioNode({ done, delay }: { done: boolean; delay: number }) {
+  return (
+    <span
+      className={`relative flex h-10 w-10 items-center justify-center rounded-full bg-bg ${
+        done ? "text-accent" : "text-steel/70"
+      }`}
+    >
+      <svg viewBox="-20 -20 40 40" className="h-10 w-10 overflow-visible" fill="none" aria-hidden>
+        {[0, 1].map((k) => (
+          <circle key={k} cx="0" cy="-4" r="4" stroke="currentColor" strokeWidth="1" opacity="0">
+            <animate attributeName="r" from="4" to="17" dur="2s" begin={`${delay + k}s`} repeatCount="indefinite" />
+            <animate attributeName="opacity" from={done ? 0.9 : 0.5} to="0" dur="2s" begin={`${delay + k}s`} repeatCount="indefinite" />
+          </circle>
+        ))}
+        <line x1="0" y1="-4" x2="0" y2="7" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="0" cy="-5" r="3" fill="currentColor" />
+        <rect x="-5" y="6" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.7" />
+      </svg>
+    </span>
   );
 }
