@@ -486,8 +486,6 @@ export function createDeviceScene(container: HTMLElement, opts: Options = {}): D
   renderer.domElement.style.display = "block";
   renderer.domElement.style.width = "100%";
   renderer.domElement.style.height = "100%";
-  // vertical page scroll must keep working over the canvas on touch
-  renderer.domElement.style.touchAction = "pan-y";
   container.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
@@ -514,6 +512,10 @@ export function createDeviceScene(container: HTMLElement, opts: Options = {}): D
   scene.add(rim);
 
   const controls = new OrbitControls(camera, renderer.domElement);
+  // OrbitControls sets touch-action: none on the canvas, which blocks page
+  // scrolling on phones. Set it back after: a vertical swipe scrolls the page,
+  // a horizontal drag rotates the device, two fingers zoom.
+  renderer.domElement.style.touchAction = "pan-y";
   controls.enableDamping = true;
   controls.dampingFactor = 0.07;
   controls.enablePan = false;

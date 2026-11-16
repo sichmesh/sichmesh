@@ -126,9 +126,13 @@ export default function Header() {
       <AnimatePresence>
         {open && (
           <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            /* opacity + y only: animating height: "auto" makes framer-motion
+               measure the page and restore the old scroll position, which
+               cancels the scroll to the tapped section on phones */
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
             className="overflow-hidden border-t border-line/50 bg-bg/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
