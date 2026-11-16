@@ -4,7 +4,7 @@
 
 # SICH
 
-**Off-grid mesh communication — built in Ukraine.**
+**Off-grid mesh communication — developed by Ukrainians.**
 
 Official website of the SICH project.
 
@@ -13,7 +13,7 @@ Official website of the SICH project.
 [![Website](https://img.shields.io/badge/web-sichmesh.org-e8b84a?style=flat-square)](https://sichmesh.org)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/zpVgjRxdQJ)
 [![YouTube](https://img.shields.io/badge/YouTube-Brain%20From%20Ukraine-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@BrainFromUkraine)
-![Made in Ukraine](https://img.shields.io/badge/made%20in-Ukraine-0057B7?style=flat-square&labelColor=FFD700)
+![Developed by Ukrainians](https://img.shields.io/badge/developed%20by-Ukrainians-0057B7?style=flat-square&labelColor=FFD700)
 
 [**Website**](https://sichmesh.org) · [**Flash firmware**](https://flasher.sichmesh.org) · [**Discord**](https://discord.gg/zpVgjRxdQJ) · [**YouTube**](https://www.youtube.com/@BrainFromUkraine)
 
@@ -31,7 +31,7 @@ Official website of the SICH project.
 
 SICH is an autonomous communication device. It lets people exchange messages, voice and location over a long-range LoRa mesh — no mobile network, no internet, no infrastructure.
 
-Every device relays traffic for the others, so the network grows with each node and keeps working when cell towers and internet links go down. The project started from a simple observation made in Ukraine: when infrastructure fails, people still need to reach each other.
+Every device relays traffic for the others, so the network grows with each node and keeps working when cell towers and internet links go down. The project grew out of what happened in Ukraine: when infrastructure fails, people still need to reach each other.
 
 SICH is aimed at civilians, volunteers, technical communities and anyone who needs communication they can rely on in difficult conditions.
 
@@ -119,5 +119,5 @@ The **SICH** name, the trident logo and the device renders are not covered by th
 
 <div align="center">
 <br />
-<sub>Built in Ukraine 🇺🇦 by <a href="https://www.youtube.com/@BrainFromUkraine">Brain From Ukraine</a></sub>
+<sub>Developed by Ukrainians 🇺🇦 · <a href="https://www.youtube.com/@BrainFromUkraine">Brain From Ukraine</a></sub>
 </div>

@@ -4,7 +4,7 @@
 
 # SICH
 
-**Автономний mesh-зв'язок — зроблено в Україні.**
+**Автономний mesh-зв'язок — розроблено українцями.**
 
 Офіційний сайт проєкту SICH.
 
@@ -13,7 +13,7 @@
 [![Website](https://img.shields.io/badge/web-sichmesh.org-e8b84a?style=flat-square)](https://sichmesh.org)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/zpVgjRxdQJ)
 [![YouTube](https://img.shields.io/badge/YouTube-Brain%20From%20Ukraine-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@BrainFromUkraine)
-![Made in Ukraine](https://img.shields.io/badge/made%20in-Ukraine-0057B7?style=flat-square&labelColor=FFD700)
+![Developed by Ukrainians](https://img.shields.io/badge/developed%20by-Ukrainians-0057B7?style=flat-square&labelColor=FFD700)
 
 [**Сайт**](https://sichmesh.org) · [**Прошити пристрій**](https://flasher.sichmesh.org) · [**Discord**](https://discord.gg/zpVgjRxdQJ) · [**YouTube**](https://www.youtube.com/@BrainFromUkraine)
 
@@ -31,7 +31,7 @@
 
 SICH — автономний пристрій зв'язку. Він дає змогу обмінюватися повідомленнями, голосом і геолокацією через LoRa mesh-мережу великої дальності — без мобільного зв'язку, без інтернету, без інфраструктури.
 
-Кожен пристрій передає трафік для інших, тому мережа зростає з кожним новим вузлом і працює далі, коли вежі зв'язку та інтернет недоступні. Проєкт народився з простого спостереження, зробленого в Україні: коли інфраструктура падає, людям усе одно потрібно зв'язатися одне з одним.
+Кожен пристрій передає трафік для інших, тому мережа зростає з кожним новим вузлом і працює далі, коли вежі зв'язку та інтернет недоступні. Проєкт виріс із того, що відбувалося в Україні: коли інфраструктура падає, людям усе одно потрібно зв'язатися одне з одним.
 
 SICH створюється для цивільних, волонтерів, технічних спільнот і всіх, кому потрібен надійний зв'язок у складних умовах.
 
@@ -119,5 +119,5 @@ Issues і pull requests вітаються. Для великих змін сп�
 
 <div align="center">
 <br />
-<sub>Зроблено в Україні 🇺🇦 — <a href="https://www.youtube.com/@BrainFromUkraine">Brain From Ukraine</a></sub>
+<sub>Розроблено українцями 🇺🇦 · <a href="https://www.youtube.com/@BrainFromUkraine">Brain From Ukraine</a></sub>
 </div>
