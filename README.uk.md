@@ -9,7 +9,7 @@
 Вихідний код офіційного сайту SICH.
 
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-e8b84a?style=flat-square)](LICENSE)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15-0b0e18?style=flat-square&logo=nextdotjs)](https://nextjs.org)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16-0b0e18?style=flat-square&logo=nextdotjs)](https://nextjs.org)
 [![Website](https://img.shields.io/badge/web-sichmesh.org-e8b84a?style=flat-square)](https://sichmesh.org)
 [![Discord](https://img.shields.io/badge/Discord-join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/zpVgjRxdQJ)
 [![YouTube](https://img.shields.io/badge/YouTube-Brain%20From%20Ukraine-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@BrainFromUkraine)

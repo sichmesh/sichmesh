@@ -8,6 +8,7 @@ import Vision from "@/components/sections/Vision";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Experience from "@/components/sections/Experience";
 import Status from "@/components/sections/Status";
+import AppSection from "@/components/sections/AppSection";
 import Join from "@/components/sections/Join";
 
 export default function Page() {
@@ -21,6 +22,7 @@ export default function Page() {
       <HowItWorks />
       <Experience />
       <Status />
+      <AppSection />
       <Join />
     </main>
   );
